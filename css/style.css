@@ -76,7 +76,7 @@ a:visited {
 }
 
 /* Media query for larger screens */
-@media screen and (min-width:900px) {
+@media screen and (min-width:901px) {
 
     /* Change flex-direction back to row and make links in correct location */
     header {
@@ -104,15 +104,9 @@ a:visited {
     } */
 
     /* Make fixed header even when you scroll */
-    header {
-        width: 100%;
-        position: fixed;
-    }
-    main {
-        padding-top: 7%;
-    }
-    main header {
-        position: static;
+    body > header {
+        position: sticky;
+        top: 0;
     }
 
 }
