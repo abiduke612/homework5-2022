@@ -1,36 +1,42 @@
+/* Logo ID styling */
 #logo {
     animation: mymove 5s;
 }
 
+/* Animation for logo to grow from 25px to 475px in 5 seconds */
 @keyframes mymove {
     from { width: 25px; opacity: 0;}
     to { width: 475px; opacity: 1;}
 }
 
-
+/* Styling font and background image */
 body {
     font-family: 'Poppins', serif;
     background-image: url("../images/concrete_seamless.png");
     background-color: #f1f1f1;
 }
 
+/* Add flex to header */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Change flex-direction to column for mobile view links to be stacked */
 .nav_links {
     display: flex;
     flex-direction: column;
     /* align-items: center; */
 }
 
+/* Make links stay blue after they're visited */
 a:visited {
     text-decoration: none;
     color: blue;
 }
 
+/* Styling for the header of the individual cards */
 .card > header {
     background-color: #288088;
     border: 2px solid #45ADAD;
@@ -39,6 +45,7 @@ a:visited {
     border-radius: 50px 50px 0px 0px;
 }
 
+/* Flex added to parent element of cards */
 .pricing {
     display: flex;
     flex-wrap: wrap;
@@ -48,12 +55,14 @@ a:visited {
     
 }
 
+/* Add border radius to cards, set initial size */
 .card {
     flex-basis: 450px;
     border-radius: 50px 50px 0px 0px;
 
 }
 
+/* Add border, margin, and width to the images in the gallery */
 .gallery img {
     border: 10px solid #50C7C7;
     margin: 10px;
@@ -66,9 +75,10 @@ a:visited {
     justify-content: center;
 }
 
-
+/* Media query for larger screens */
 @media screen and (min-width:900px) {
 
+    /* Change flex-direction back to row and make links in correct location */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -88,26 +98,26 @@ a:visited {
         align-self: center;
     }
     
+    /* What i feel like should be added to center card headers: */
     /* .card > header {
         justify-content: center;
     } */
 
+    /* Make fixed header even when you scroll */
     header {
         width: 100%;
         position: fixed;
     }
-
     main {
         padding-top: 7%;
     }
-
     main header {
         position: static;
     }
 
 }
 
-
+/* Media query for reduced motion users */
 @media screen and (prefers-reduced-motion) {
 
     #logo {
@@ -116,8 +126,10 @@ a:visited {
 
 }
 
+/* Media query for printing */
 @media print {
     
+    /* Change font */
     body {
         font-family: Arial, Helvetica;
         background-image: none;
@@ -127,37 +139,38 @@ a:visited {
         align-self: center;
     }
 
+    /* Make the links stretch across the page */
     header {
         flex-direction: column;
         align-items: stretch;
     }
-
     .nav_links {
         flex-direction: row;
         justify-content: space-around;
     }
 
+    /* Location of cards set by parent .pricing */
     .pricing {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: flex-end;
     }
 
+    /* Add a border to cards, flex-basis size */
     .card {
         border: 2px solid #45ADDD;
         flex-basis: 325px;
         align-self: center;
     }
 
+    /* Hide the gallery */
     .gallery, #gallery {
         display: none;
     }
 
+    /* Add thumbs-up emoji */
     .card > ul > li:nth-child(2)::after {
         content: "\1F44D";
     }
 
 }
-
-
-/* Need to add comments!! */
